@@ -103,4 +103,4 @@ input_scaled = scaler.transform(input_df)
 
 if st.button("Предсказать Work-Life Balance"):
     prediction = model.predict(input_scaled)
-    st.success(f"Ориентировочный баланс, который у вас будет: {int(prediction[0])}")
+    st.success(f"Ориентировочный баланс, который у вас будет (от 0 до 10): {int(prediction[0])}")
