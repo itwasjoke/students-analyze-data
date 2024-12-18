@@ -22,9 +22,6 @@ all_columns = [
 # Загрузка LabelEncoder
 le = load('label_encoder.joblib')
 
-# Загрузка Scaler
-scaler = load('scaler.joblib')
-
 # Получение уникальных значений Job_Type из LabelEncoder
 job_type_options = list(le.classes_)
 
@@ -99,7 +96,6 @@ input_df = pd.DataFrame([input_data], columns=all_columns).fillna(0)
 
 #Преобразование поля работы и маштабирование
 input_df["Job_Type"] = le.transform(input_df["Job_Type"])[0]
-input_scaled = scaler.transform(input_df)
 
 if st.button("Предсказать Work-Life Balance"):
     prediction = model.predict(input_scaled)
