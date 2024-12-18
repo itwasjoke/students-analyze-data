@@ -98,5 +98,5 @@ input_df = pd.DataFrame([input_data], columns=all_columns).fillna(0)
 input_df["Job_Type"] = le.transform(input_df["Job_Type"])[0]
 
 if st.button("Предсказать Work-Life Balance"):
-    prediction = model.predict(input_scaled)
+    prediction = model.predict(input_df)
     st.success(f"Ориентировочный баланс, который у вас будет (от 0 до 10): {int(prediction[0])}")
