@@ -94,7 +94,7 @@ input_data = {
 #Создание датафрейма
 input_df = pd.DataFrame([input_data], columns=all_columns).fillna(0)
 
-#Преобразование поля работы и маштабирование
+#Преобразование поля работы
 input_df["Job_Type"] = le.transform(input_df["Job_Type"])[0]
 
 if st.button("Предсказать Work-Life Balance"):
